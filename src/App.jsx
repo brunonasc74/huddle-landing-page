@@ -3,6 +3,8 @@ import theme from './components/styles/theme';
 import GlobalStyles from './components/styles/GlobalStyles';
 import { Container } from './components/styles/Container.styled';
 import Header from './components/Header';
+import Card from './components/Card';
+import content from './content';
 
 function App() {
 	return (
@@ -11,7 +13,9 @@ function App() {
 			<>
 				<Header />
 				<Container>
-					<h1>Hello</h1>
+					{content.map((item, index) => {
+						return <Card key={index} item={item} />;
+					})}
 				</Container>
 			</>
 		</ThemeProvider>
